@@ -1,4 +1,4 @@
-package br.com.simple.tests.springboot.model;
+package br.com.simple.tests.springboot.model.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
