@@ -20,12 +20,12 @@ public class RepositoryCounterAspect {
     }
 
     @AfterReturning(pointcut = "execution(* br.com.simple.tests.springboot.model.*Repository.*(..))")
-    public void afterSave(JoinPoint jp) {
+    public void afterReturning(JoinPoint jp) {
         counterService.increment("repository.calls." + jp.getSignature().getDeclaringType().getSimpleName() + "." + jp.getSignature().getName());
     }
 
     @AfterThrowing(pointcut = "execution(* br.com.simple.tests.springboot.model.*Repository.*(..))", throwing = "e")
-    public void afterGetGreetingThrowsException(JoinPoint jp, Exception e) {
+    public void afterThrowsException(JoinPoint jp, Exception e) {
         counterService.increment("repository.errors." + jp.getSignature().getDeclaringType().getSimpleName() + "." + jp.getSignature().getName());
     }
 }

@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <appender name="FILE-METRICS" class="ch.qos.logback.core.FileAppender">
-        <file>springboot-metrics.log</file>
-
-        <encoder>
-            <pattern>%date %msg%n</pattern>
-        </encoder>
-    </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>springboot-test.log</file>
@@ -21,10 +14,6 @@
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
-
-    <logger name="METRICS" level="DEBUG">
-        <appender-ref ref="FILE-METRICS" />
-    </logger>
 
     <logger name="br.com.simple.tests.springboot" level="DEBUG" />
 
